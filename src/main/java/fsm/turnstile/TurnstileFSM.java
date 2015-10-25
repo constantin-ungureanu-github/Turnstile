@@ -10,6 +10,7 @@ public abstract class TurnstileFSM {
 
     void setState(TurnstileState state) {
         this.state = state;
+        logger.debug("state {}", state);
     }
 
     public void pass() {
@@ -22,11 +23,11 @@ public abstract class TurnstileFSM {
         logger.debug("coin");
     }
 
-    public abstract void alarm();
-
     public abstract void lock();
 
     public abstract void unlock();
 
     public abstract void thankyou();
+
+    public abstract void alarm();
 }
